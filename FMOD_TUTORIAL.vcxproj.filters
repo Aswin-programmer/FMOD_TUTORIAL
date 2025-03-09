@@ -18,12 +18,12 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AudioEngine.cpp">
+    <ClCompile Include="AudioSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AudioEngine.h">
+    <ClInclude Include="AudioSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

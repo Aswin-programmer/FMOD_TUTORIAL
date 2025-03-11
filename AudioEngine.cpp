@@ -48,9 +48,9 @@ void AudioEngine::Update(float deltaTime) {
 }
 
 void AudioEngine::LoadMasterBanks() {
-    LoadBank("C:/Aswin_Game_DEV/OPENGL_TUTORIAL/FMOD/FMOD_TUTORIAL/EXTERNAL/SOUNDS/Master.bank");
-    LoadBank("C:/Aswin_Game_DEV/OPENGL_TUTORIAL/FMOD/FMOD_TUTORIAL/EXTERNAL/SOUNDS/Master.strings.bank");  // Required for event path resolution
-    LoadBank("C:/Aswin_Game_DEV/OPENGL_TUTORIAL/FMOD/FMOD_TUTORIAL/EXTERNAL/SOUNDS/SFX.bank");  // Required for event path resolution
+    LoadBank("EXTERNAL/SOUNDS/sample/Build/Desktop/Master.bank");
+    LoadBank("EXTERNAL/SOUNDS/sample/Build/Desktop/Master.strings.bank");  // Required for event path resolution
+    LoadBank("EXTERNAL/SOUNDS/sample/Build/Desktop/SFX.bank");  // Required for event path resolution
 }
 
 void AudioEngine::LoadBank(const std::string& bankName) {

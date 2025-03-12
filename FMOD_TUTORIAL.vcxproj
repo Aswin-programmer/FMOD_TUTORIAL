@@ -143,11 +143,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AudioSystem.cpp" />
+    <ClCompile Include="AudioEvent.cpp" />
+    <ClCompile Include="FMODAudioSystem.cpp" />
+    <ClCompile Include="GameAudioManager.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AudioSystem.h" />
+    <ClInclude Include="AudioEvent.h" />
+    <ClInclude Include="FMODAudioSystem.h" />
+    <ClInclude Include="GameAudioManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

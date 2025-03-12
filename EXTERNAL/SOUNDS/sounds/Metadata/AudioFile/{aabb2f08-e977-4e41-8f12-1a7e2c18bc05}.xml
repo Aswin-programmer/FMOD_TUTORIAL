@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{aabb2f08-e977-4e41-8f12-1a7e2c18bc05}">
+		<property name="assetPath">
+			<value>ambience_city_traffic_horn_4.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.4955208333333334</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{59367871-3929-403c-9ad5-c08d68b1306e}</destination>
+		</relationship>
+	</object>
+</objects>

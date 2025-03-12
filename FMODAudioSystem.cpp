@@ -329,23 +329,25 @@ bool FMODAudioSystem::PlayOneShot(const std::string& eventPath, const FMOD_VECTO
 
 void FMODAudioSystem::Set3DListenerPosition(float x, float y)
 {
-    if (!m_Initialized)
-    {
-        return;
-    }
+    if (!m_Initialized) return;
 
-    // For 2D games, we're using the X and Y coordinates, and setting Z to 0
-    m_ListenerPosition = { x, y, 0 };
+    FMOD_3D_ATTRIBUTES listenerAttributes;
+    listenerAttributes.position = { x, y, 0 };
+    listenerAttributes.velocity = { 0, 0, 0 };
+    listenerAttributes.forward = { 0, 0, 1 };  // Forward direction (z-axis)
+    listenerAttributes.up = { 0, 1, 0 };       // Up direction (y-axis)
 
-    FMOD_RESULT result = m_CoreSystem->set3DListenerAttributes(
-        0,                      // Listener index (0 for single listener)
-        &m_ListenerPosition,    // Position
-        &m_ListenerVelocity,    // Velocity
-        &m_ListenerForward,     // Forward vector
-        &m_ListenerUp           // Up vector
-    );
-
+    // Update Studio System listener (index 0)
+    FMOD_RESULT result = m_StudioSystem->setListenerAttributes(0, &listenerAttributes);
     ErrorCheck(result);
+
+    // Optional: Verify the position via Studio System
+    FMOD_3D_ATTRIBUTES verifyAttrs;
+    result = m_StudioSystem->getListenerAttributes(0, &verifyAttrs);
+    if (result == FMOD_OK) {
+        std::cout << "Studio Listener Position: " << verifyAttrs.position.x
+            << ", " << verifyAttrs.position.y << std::endl;
+    }
 }
 
 void FMODAudioSystem::Set3DEventPosition(FMOD::Studio::EventInstance* eventInstance, float x, float y)
@@ -368,6 +370,15 @@ void FMODAudioSystem::Set3DEventPosition(FMOD::Studio::EventInstance* eventInsta
     attributes.up = up;
 
     FMOD_RESULT result = eventInstance->set3DAttributes(&attributes);
+
+    // Verify position was set by reading it back
+    FMOD_3D_ATTRIBUTES verifyAttributes;
+    result = eventInstance->get3DAttributes(&verifyAttributes);
+    if (result == FMOD_OK) {
+        std::cout << "Verified position: " << verifyAttributes.position.x
+            << ", " << verifyAttributes.position.y << std::endl;
+    }
+
     ErrorCheck(result);
 }
 

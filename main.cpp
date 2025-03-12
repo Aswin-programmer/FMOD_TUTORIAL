@@ -67,11 +67,11 @@ int main()
 
     // Try playing the event, check result
    // Example variables for positions
-    float playerX = 0; // Player's x position
+    float playerX = 30; // Player's x position
     float playerY = 0;  // Player's y position
-
-    float sourceX = 210.0f; // Sound source x position
-    float sourceY = 50.0f;  // Sound source y position
+                    
+    float sourceX = 0; // Sound source x position
+    float sourceY = 0;  // Sound source y position
 
     // 1. Set the listener's position (e.g., player's position)
     GameAudioManager::GetInstance().SetListenerPosition(playerX, playerY);
@@ -92,6 +92,8 @@ int main()
         std::cout << "Play result: " << (playResult ? "Success" : "Failed") << std::endl;
         std::cout << "Is event playing: " << (spatialEvent->IsPlaying() ? "Yes" : "No") << std::endl;
     }
+
+
 
     //auto musicTrack = GameAudioManager::GetInstance().PlayOneShot("event:/MUSIC/TRAFFICMUSIC",210,50);
 

@@ -92,12 +92,6 @@ private:
     // Cached event descriptions
     std::map<std::string, FMOD::Studio::EventDescription*> m_EventDescriptions;
 
-    // 3D listener information
-    FMOD_VECTOR m_ListenerPosition = { 0, 0, 0 };
-    FMOD_VECTOR m_ListenerVelocity = { 0, 0, 0 };
-    FMOD_VECTOR m_ListenerForward = { 0, 0, 1 };
-    FMOD_VECTOR m_ListenerUp = { 0, 1, 0 };
-
     // Active snapshots
     std::map<std::string, FMOD::Studio::EventInstance*> m_ActiveSnapshots;
 

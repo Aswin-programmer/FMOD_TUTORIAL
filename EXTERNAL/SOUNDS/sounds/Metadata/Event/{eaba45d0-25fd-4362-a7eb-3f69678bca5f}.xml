@@ -167,8 +167,5 @@
 		<property name="overrideRange">
 			<value>true</value>
 		</property>
-		<property name="panBlend">
-			<value>0</value>
-		</property>
 	</object>
 </objects>

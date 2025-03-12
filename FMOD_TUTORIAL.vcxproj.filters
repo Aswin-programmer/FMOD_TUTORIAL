@@ -18,13 +18,38 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AudioSystem.cpp">
+    <ClCompile Include="AudioEvent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FMODAudioSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameAudioManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AudioSystem.h">
+    <ClInclude Include="AudioEvent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FMODAudioSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameAudioManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+    <None Include="EXTERNAL\FMOD_API\core\lib\x64\fmod.dll" />
+    <None Include="EXTERNAL\FMOD_API\core\lib\x64\fmodL.dll" />
+    <None Include="EXTERNAL\FMOD_API\studio\lib\x64\fmodstudio.dll" />
+    <None Include="EXTERNAL\FMOD_API\studio\lib\x64\fmodstudioL.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="EXTERNAL\FMOD_API\core\lib\x64\fmod_vc.lib" />
+    <Library Include="EXTERNAL\FMOD_API\core\lib\x64\fmodL_vc.lib" />
+    <Library Include="EXTERNAL\FMOD_API\studio\lib\x64\fmodstudio_vc.lib" />
+    <Library Include="EXTERNAL\FMOD_API\studio\lib\x64\fmodstudioL_vc.lib" />
   </ItemGroup>
 </Project>

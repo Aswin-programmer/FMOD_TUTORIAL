@@ -93,12 +93,20 @@ int main()
         std::cout << "Is event playing: " << (spatialEvent->IsPlaying() ? "Yes" : "No") << std::endl;
     }
 
-    std::shared_ptr<AudioEvent> ambienceEvent = GameAudioManager::GetInstance().PlayMusicTrack("event:/AMBIENCE/morning");
+    /*std::shared_ptr<AudioEvent> ambienceEvent = GameAudioManager::GetInstance().PlayMusicTrack("event:/AMBIENCE/morning");
     if (ambienceEvent)
     {
         std::cout << "ambience created successfully" << std::endl;
         ambienceEvent->SetParameter("morningIntensityParameter", 1);
+    }*/
+
+    std::shared_ptr<AudioEvent> backgroundEvent = GameAudioManager::GetInstance().PlayMusicTrack("event:/BACKGROUND/backgroundEvent");
+    if (backgroundEvent)
+    {
+        std::cout << "background created successfully" << std::endl;
+        backgroundEvent->SetParameter("backgroundParameter", 0);
     }
+
     //auto musicTrack = GameAudioManager::GetInstance().PlayOneShot("event:/MUSIC/TRAFFICMUSIC",210,50);
 
     // Game loop
@@ -122,13 +130,18 @@ int main()
             std::cout << "Sound position: " << sourceX << ", " << sourceY << std::endl;
         }
 
-        if (loopCount == 100)
+        /*if (loopCount == 100)
         {
             ambienceEvent->Pause();
         }
         if (loopCount == 200)
         {
             ambienceEvent->Resume();
+        }*/
+
+        if (loopCount == 100)
+        {
+            backgroundEvent->SetParameter("backgroundParameter", 1);
         }
 
         // Add a small sleep to avoid maxing CPU

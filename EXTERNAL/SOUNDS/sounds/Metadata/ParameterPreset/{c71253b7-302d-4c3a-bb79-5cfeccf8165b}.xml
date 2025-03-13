@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{c71253b7-302d-4c3a-bb79-5cfeccf8165b}">
+		<property name="name">
+			<value>morningIntensityParameter</value>
+		</property>
+		<relationship name="folder">
+			<destination>{e6842392-2724-4388-bd03-5c2d660da6f4}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{72c6a11f-b170-4d41-893e-0e634564afc8}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{72c6a11f-b170-4d41-893e-0e634564afc8}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<relationship name="automators">
+			<destination>{57fa0bfd-d961-4c83-8e2b-2223e3788471}</destination>
+		</relationship>
+	</object>
+	<object class="Automator" id="{57fa0bfd-d961-4c83-8e2b-2223e3788471}">
+		<property name="nameOfPropertyBeingAutomated">
+			<value>cursorPosition</value>
+		</property>
+	</object>
+</objects>

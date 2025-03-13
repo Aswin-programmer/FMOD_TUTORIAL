@@ -55,6 +55,17 @@ bool AudioEvent::Pause(bool pause)
     return (result == FMOD_OK);
 }
 
+bool AudioEvent::Resume(bool pause)
+{
+    if (!m_IsValid || !m_EventInstance)
+    {
+        return false;
+    }
+
+    FMOD_RESULT result = m_EventInstance->setPaused(pause);
+    return (result == FMOD_OK);
+}
+
 bool AudioEvent::IsPaused() const
 {
     if (!m_IsValid || !m_EventInstance)

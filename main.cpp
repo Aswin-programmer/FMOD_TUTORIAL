@@ -93,8 +93,12 @@ int main()
         std::cout << "Is event playing: " << (spatialEvent->IsPlaying() ? "Yes" : "No") << std::endl;
     }
 
-
-
+    std::shared_ptr<AudioEvent> ambienceEvent = GameAudioManager::GetInstance().PlayMusicTrack("event:/AMBIENCE/morning");
+    if (ambienceEvent)
+    {
+        std::cout << "ambience created successfully" << std::endl;
+        ambienceEvent->SetParameter("morningIntensityParameter", 1);
+    }
     //auto musicTrack = GameAudioManager::GetInstance().PlayOneShot("event:/MUSIC/TRAFFICMUSIC",210,50);
 
     // Game loop
@@ -116,6 +120,15 @@ int main()
             sourceX += 5.0f; // Move sound 5 units to the right
             spatialEvent->SetPosition(sourceX, sourceY);
             std::cout << "Sound position: " << sourceX << ", " << sourceY << std::endl;
+        }
+
+        if (loopCount == 100)
+        {
+            ambienceEvent->Pause();
+        }
+        if (loopCount == 200)
+        {
+            ambienceEvent->Resume();
         }
 
         // Add a small sleep to avoid maxing CPU

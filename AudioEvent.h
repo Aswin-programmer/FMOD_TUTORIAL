@@ -26,7 +26,8 @@ public:
     // Basic playback control
     bool Play();
     bool Stop(bool allowFadeOut = true);
-    bool Pause(bool pause);
+    bool Pause(bool pause = true);
+    bool Resume(bool pause = false);
     bool IsPaused() const;
 
     // Positional audio
